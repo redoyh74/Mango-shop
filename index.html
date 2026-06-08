@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🥭 ফ্রেশ আম বাজার | Online Mango Shop</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6f8;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#ffb300,#ff8800);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+header h1{
+    margin:0;
+    font-size:32px;
+}
+
+header p{
+    margin-top:8px;
+    font-size:16px;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:20px;
+}
+
+.hero img{
+    width:95%;
+    max-width:700px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* CONTAINER */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom:25px;
+}
+
+.card h2{
+    color:#ff8800;
+}
+
+/* PRICE */
+.price{
+    color:green;
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* INPUT */
+input, textarea{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:15px;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#218838;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+    display:block;
+    text-align:center;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:16px;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+.whatsapp:hover{
+    background:#1ebe5d;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:white;
+    margin-top:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🥭 ফ্রেশ আম বাজার</h1>
+    <p>বাগান থেকে সরাসরি আপনার ঘরে — ১০০% প্রাকৃতিক ও টাটকা আম</p>
+</header>
+
+<section class="hero">
+    <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?w=1200" alt="Mango">
+</section>
+
+<div class="container">
+
+    <!-- PRODUCT -->
+    <div class="card">
+        <h2>🌟 প্রিমিয়াম হারিভাঙ্গা আম</h2>
+        <p>
+            আমাদের বাগানের সরাসরি সংগ্রহ করা টাটকা আম।  
+            একদম মিষ্টি, রসালো এবং কেমিক্যাল মুক্ত।
+        </p>
+        <p class="price">৳ ১২০ / কেজি</p>
+    </div>
+
+    <!-- ORDER FORM -->
+    <div class="card">
+        <h2>🛒 অর্ডার করুন এখনই</h2>
+
+        <form id="mangoForm">
+            <input type="text" name="name" placeholder="আপনার নাম লিখুন" required>
+            <input type="tel" name="phone" placeholder="মোবাইল নাম্বার" required>
+            <input type="text" name="address" placeholder="সম্পূর্ণ ঠিকানা" required>
+            <input type="number" name="quantity" placeholder="কত কেজি আম লাগবে?" required>
+            <textarea name="note" placeholder="অতিরিক্ত তথ্য (ঐচ্ছিক)"></textarea>
+
+            <button type="submit">📦 অর্ডার কনফার্ম করুন</button>
+        </form>
+
+        <!-- WHATSAPP -->
+        <a class="whatsapp"
+           href="https://wa.me/8801789897434?text=আমি%20আম%20অর্ডার%20করতে%20চাই%20🥭"
+           target="_blank">
+           💬 WhatsApp এ অর্ডার করুন
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 ফ্রেশ আম বাজার | All Rights Reserved
+</footer>
+
+<!-- GOOGLE SHEET CONNECT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("mangoForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    fetch("https://script.google.com/macros/s/AKfycbwiflsHtSd_sCCNDHa9t0yulY8K1qZzjnCzNqzUwPo_SNreItnmNWciWrueb9gmCLpi/exec", {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(res => res.text())
+    .then(data => {
+      alert("Order placed successfully 🍋");
+      form.reset();
+    })
+    .catch(err => {
+      console.log(err);
+      alert("Error! আবার চেষ্টা করো");
+    });
+
+  });
+
+});
+</script>
+
+</body>
+</html>
