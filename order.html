@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>অর্ডার করুন — আমের রাজা</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">🥭 আমের রাজা</a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">🏠 হোম</a></li>
+      <li class="dropdown">
+        <a href="mango-list.html">🥭 আমের তালিকা ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="mango-list.html#himsagar">হিমসাগর</a></li>
+          <li><a href="mango-list.html#amrapali">আম্রপালি</a></li>
+          <li><a href="mango-list.html#fazli">ফজলি</a></li>
+          <li><a href="mango-list.html#langra">ল্যাংড়া</a></li>
+          <li><a href="mango-list.html#gopalvog">গোপালভোগ</a></li>
+          <li><a href="mango-list.html#mix">মিক্স প্যাকেজ</a></li>
+        </ul>
+      </li>
+      <li><a href="order.html" class="active">🛒 অর্ডার করুন</a></li>
+      <li><a href="about.html">ℹ️ আমাদের সম্পর্কে</a></li>
+      <li><a href="contact.html">📞 যোগাযোগ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">সহজ প্রক্রিয়া</span>
+    <h1 class="section-title" style="color:#fff;">অর্ডার করুন</h1>
+    <p style="color:rgba(255,255,255,0.8);font-size:18px;">WhatsApp বা Email-এ অর্ডার করুন — মাত্র কয়েক মিনিটেই!</p>
+  </div>
+</div>
+
+<section class="section" style="background:#fff;">
+  <div class="container">
+
+    <!-- HOW TO ORDER STEPS -->
+    <span class="section-label">ধাপে ধাপে</span>
+    <h2 class="section-title">কীভাবে অর্ডার করবেন?</h2>
+    <div class="steps-grid" style="margin-top:40px;margin-bottom:60px;">
+      <div class="step-card">
+        <div class="step-num">১</div>
+        <h3>আম বাছুন</h3>
+        <p>আমাদের তালিকা থেকে পছন্দের আম ও কেজি সংখ্যা ঠিক করুন।</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">২</div>
+        <h3>যোগাযোগ করুন</h3>
+        <p>নিচের WhatsApp বা Email বাটনে ক্লিক করে অর্ডার দিন।</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">৩</div>
+        <h3>পেমেন্ট করুন</h3>
+        <p>bKash/Nagad/ব্যাংক ট্রান্সফারে পেমেন্ট নিশ্চিত করুন।</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">৪</div>
+        <h3>ডেলিভারি পান</h3>
+        <p>২৪ ঘণ্টার মধ্যে তাজা আম আপনার দরজায়।</p>
+      </div>
+    </div>
+
+    <!-- QUICK ORDER CALCULATOR -->
+    <div class="order-calc">
+      <h2 class="section-title" style="margin-bottom:8px;">দাম হিসাব করুন</h2>
+      <p style="color:#7A5C2E;margin-bottom:32px;">আমের জাত ও কেজি সংখ্যা বাছাই করলে মোট দাম দেখাবে।</p>
+      <div class="calc-box">
+        <div class="calc-row">
+          <label>আমের জাত বাছুন:</label>
+          <select id="mangoType" onchange="calcPrice()">
+            <option value="350">হিমসাগর — ৳৩৫০/কেজি</option>
+            <option value="280">আম্রপালি — ৳২৮০/কেজি</option>
+            <option value="250">ফজলি — ৳২৫০/কেজি</option>
+            <option value="320">ল্যাংড়া — ৳৩২০/কেজি</option>
+            <option value="400">গোপালভোগ — ৳৪০০/কেজি</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label>পরিমাণ (কেজি):</label>
+          <input type="number" id="qty" value="2" min="2" onchange="calcPrice()" oninput="calcPrice()"/>
+        </div>
+        <div class="calc-result" id="calcResult">
+          <div class="result-row"><span>মূল্য প্রতি কেজি:</span><strong id="perKg">৳৩৫০</strong></div>
+          <div class="result-row"><span>মোট পরিমাণ:</span><strong id="totalKg">২ কেজি</strong></div>
+          <div class="result-row total"><span>মোট মূল্য:</span><strong id="totalPrice">৳৭০০</strong></div>
+          <p id="discountNote" style="color:#2D6A2D;font-size:14px;margin-top:8px;"></p>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;">
+          <a id="waBtn" href="#" class="btn-whatsapp" target="_blank">💬 WhatsApp অর্ডার করুন</a>
+          <a href="mailto:redoyh74@gmail.com?subject=আম অর্ডার" class="btn-primary">📧 Email অর্ডার করুন</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAYMENT INFO -->
+    <div style="margin-top:60px;">
+      <h2 class="section-title">পেমেন্ট পদ্ধতি</h2>
+      <div class="why-grid" style="margin-top:30px;">
+        <div class="why-card">
+          <span class="why-icon">📱</span>
+          <h3>bKash</h3>
+          <p>01789-897434<br/>পার্সোনাল নম্বরে পাঠান।</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon">💜</span>
+          <h3>Nagad</h3>
+          <p>01789-897434<br/>Nagad-এ সহজেই পাঠান।</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon">🏦</span>
+          <h3>ব্যাংক ট্রান্সফার</h3>
+          <p>বিস্তারিত জানতে WhatsApp করুন।</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon">💵</span>
+          <h3>ক্যাশ অন ডেলিভারি</h3>
+          <p>ঢাকার মধ্যে ক্যাশ অন ডেলিভারি পাওয়া যায়।</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">🥭 আমের রাজা</div>
+        <p>বাংলাদেশের সেরা প্রিমিয়াম আমের শপ।</p>
+      </div>
+      <div>
+        <h4>পেজসমূহ</h4>
+        <ul>
+          <li><a href="index.html">হোম</a></li>
+          <li><a href="mango-list.html">আমের তালিকা</a></li>
+          <li><a href="order.html">অর্ডার করুন</a></li>
+          <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+          <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>যোগাযোগ</h4>
+        <p>📞 01789-897434</p>
+        <p>📧 redoyh74@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© ২০২৪ আমের রাজা। সকল স্বত্ব সংরক্ষিত।</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+const prices = { 350: { name: 'হিমসাগর', disc5: 330, disc10: 300 }, 280: { name: 'আম্রপালি', disc5: 260, disc10: 240 }, 250: { name: 'ফজলি', disc5: 230, disc10: 210 }, 320: { name: 'ল্যাংড়া', disc5: 300, disc10: 280 }, 400: { name: 'গোপালভোগ', disc5: 380, disc10: 350 } };
+
+function calcPrice() {
+  const basePrice = parseInt(document.getElementById('mangoType').value);
+  const qty = parseFloat(document.getElementById('qty').value) || 2;
+  const info = prices[basePrice];
+  let price = basePrice;
+  let note = '';
+  if (qty >= 10) { price = info.disc10; note = '🎉 ১০+ কেজিতে বিশেষ ছাড় পাচ্ছেন!'; }
+  else if (qty >= 5) { price = info.disc5; note = '✅ ৫+ কেজিতে ডিসকাউন্ট প্রযোজ্য।'; }
+  const total = Math.round(price * qty);
+  document.getElementById('perKg').textContent = '৳' + price;
+  document.getElementById('totalKg').textContent = qty + ' কেজি';
+  document.getElementById('totalPrice').textContent = '৳' + total.toLocaleString('bn-BD');
+  document.getElementById('discountNote').textContent = note;
+  const msg = info.name + ' আম অর্ডার করতে চাই — পরিমাণ: ' + qty + ' কেজি, মোট: ৳' + total;
+  document.getElementById('waBtn').href = 'https://wa.me/8801789897434?text=' + encodeURIComponent(msg);
+}
+calcPrice();
+</script>
+</body>
+</html>
