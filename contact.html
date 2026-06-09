@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>যোগাযোগ — আমের রাজা</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">🥭 আমের রাজা</a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">🏠 হোম</a></li>
+      <li class="dropdown">
+        <a href="mango-list.html">🥭 আমের তালিকা ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="mango-list.html#himsagar">হিমসাগর</a></li>
+          <li><a href="mango-list.html#amrapali">আম্রপালি</a></li>
+          <li><a href="mango-list.html#fazli">ফজলি</a></li>
+          <li><a href="mango-list.html#langra">ল্যাংড়া</a></li>
+          <li><a href="mango-list.html#gopalvog">গোপালভোগ</a></li>
+          <li><a href="mango-list.html#mix">মিক্স প্যাকেজ</a></li>
+        </ul>
+      </li>
+      <li><a href="order.html">🛒 অর্ডার করুন</a></li>
+      <li><a href="about.html">ℹ️ আমাদের সম্পর্কে</a></li>
+      <li><a href="contact.html" class="active">📞 যোগাযোগ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">সরাসরি যোগাযোগ</span>
+    <h1 class="section-title" style="color:#fff;">যোগাযোগ করুন</h1>
+    <p style="color:rgba(255,255,255,0.8);font-size:18px;">আমরা সবসময় আপনার সেবায় প্রস্তুত।</p>
+  </div>
+</div>
+
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="contact-icon">💬</span>
+        <h3>WhatsApp</h3>
+        <p>সবচেয়ে দ্রুত সাড়া পেতে WhatsApp-এ মেসেজ করুন।</p>
+        <p style="font-size:22px;font-weight:700;color:#1A1005;margin:16px 0;">01789-897434</p>
+        <p style="font-size:14px;color:#999;margin-bottom:20px;">সকাল ৮টা — রাত ১০টা (প্রতিদিন)</p>
+        <a href="https://wa.me/8801789897434?text=আমি আম অর্ডার করতে চাই" class="contact-btn whatsapp-btn" target="_blank">💬 WhatsApp করুন</a>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon">📧</span>
+        <h3>Email</h3>
+        <p>বাল্ক অর্ডার বা বিস্তারিত প্রশ্নের জন্য ইমেইল করুন।</p>
+        <p style="font-size:18px;font-weight:700;color:#1A1005;margin:16px 0;">redoyh74@gmail.com</p>
+        <p style="font-size:14px;color:#999;margin-bottom:20px;">২৪ ঘণ্টার মধ্যে উত্তর পাবেন</p>
+        <a href="mailto:redoyh74@gmail.com?subject=আম অর্ডার&body=আমি আম অর্ডার করতে চাই।%0A%0Aআমের জাত:%0Aপরিমাণ (কেজি):%0Aঠিকানা:%0Aফোন নম্বর:" class="contact-btn email-btn">📧 Email করুন</a>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="margin-top:60px;">
+      <span class="section-label">সাধারণ প্রশ্ন</span>
+      <h2 class="section-title">প্রায়ই জিজ্ঞাসিত প্রশ্ন</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>ডেলিভারি কতদিনে পাব?</span><span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">অর্ডার ও পেমেন্ট নিশ্চিত হওয়ার পর ২৪ ঘণ্টার মধ্যে সারা বাংলাদেশে ডেলিভারি দেওয়া হয়। ঢাকার বাইরে ১–২ দিন লাগতে পারে।</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>ন্যূনতম কত কেজি অর্ডার করা যাবে?</span><span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">ন্যূনতম ২ কেজি থেকে অর্ডার করা যাবে। মিক্স প্যাকেজের ক্ষেত্রে ন্যূনতম ৫ কেজি।</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>পেমেন্ট কীভাবে করব?</span><span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">bKash, Nagad, ব্যাংক ট্রান্সফার বা ঢাকার মধ্যে ক্যাশ অন ডেলিভারিতে পেমেন্ট করা যাবে।</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>আম খারাপ হলে কী করব?</span><span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">ডেলিভারির সময় আম খারাপ বা মান সন্তুষ্টজনক না হলে আমাদের WhatsApp করুন। সম্পূর্ণ অর্থ ফেরত বা পুনরায় ডেলিভারির ব্যবস্থা করা হবে।</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span>বাল্ক অর্ডারে কি ছাড় পাওয়া যায়?</span><span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">হ্যাঁ! ৫ কেজি বা তার বেশি অর্ডারে বিশেষ ছাড় পাওয়া যায়। বিস্তারিত জানতে আমাদের অর্ডার পেজ দেখুন বা WhatsApp করুন।</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">🥭 আমের রাজা</div><p>বাংলাদেশের সেরা প্রিমিয়াম আমের শপ।</p></div>
+      <div><h4>পেজসমূহ</h4><ul><li><a href="index.html">হোম</a></li><li><a href="mango-list.html">আমের তালিকা</a></li><li><a href="order.html">অর্ডার করুন</a></li><li><a href="about.html">আমাদের সম্পর্কে</a></li><li><a href="contact.html">যোগাযোগ</a></li></ul></div>
+      <div><h4>যোগাযোগ</h4><p>📞 01789-897434</p><p>📧 redoyh74@gmail.com</p></div>
+    </div>
+    <div class="footer-bottom">© ২০২৪ আমের রাজা। সকল স্বত্ব সংরক্ষিত।</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function toggleFaq(el) {
+  const answer = el.nextElementSibling;
+  const arrow = el.querySelector('.faq-arrow');
+  const isOpen = answer.style.display === 'block';
+  document.querySelectorAll('.faq-a').forEach(a => a.style.display = 'none');
+  document.querySelectorAll('.faq-arrow').forEach(a => a.textContent = '▼');
+  if (!isOpen) { answer.style.display = 'block'; arrow.textContent = '▲'; }
+}
+</script>
+</body>
+</html>
